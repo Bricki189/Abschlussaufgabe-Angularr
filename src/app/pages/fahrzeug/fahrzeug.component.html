@@ -1,0 +1,34 @@
+<div style="margin: 50px;">
+    <table mat-table [dataSource]="data" class="mat-elevation-z8">
+
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="marke">
+          <th mat-header-cell *matHeaderCellDef> Marke </th>
+          <td mat-cell *matCellDef="let element"> {{element.marke}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="model">
+          <th mat-header-cell *matHeaderCellDef> Model </th>
+          <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="autoNr">
+            <th mat-header-cell *matHeaderCellDef> Auto Nr </th>
+            <td mat-cell *matCellDef="let element"> {{element.autoNr}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="rahmenNr">
+            <th mat-header-cell *matHeaderCellDef> Rahmen Nr </th>
+            <td mat-cell *matCellDef="let element"> {{element.rahmenNr}} </td>
+          </ng-container>
+      
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>   
+</div>
