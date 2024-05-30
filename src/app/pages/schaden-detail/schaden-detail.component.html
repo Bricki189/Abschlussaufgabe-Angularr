@@ -1,0 +1,43 @@
+<div>
+    <div class="app-form" style="margin-left: 50px; margin-top: 100px;">
+      <form [formGroup]="objForm!" (ngSubmit)="save(objForm.value)">
+        <div class="form-elements">
+            <div> <mat-form-field>
+                <mat-label> Schaden Art </mat-label>
+                <input  appAutofocus formControlName="schadenArt" matInput maxlength="20" required>
+            </mat-form-field>
+            </div>
+           
+           <div>
+            <mat-form-field>
+                <mat-label> Schaden Staerke </mat-label>
+                <input  appAutofocus formControlName="schadensstaerke" matInput maxlength="20" required>
+            </mat-form-field>
+           </div>
+           
+           <div>
+            <mat-form-field>
+                <mat-label> Stelle </mat-label>
+                <input  appAutofocus formControlName="stelle" matInput maxlength="20" required>
+            </mat-form-field>
+           </div>
+            
+           <div>
+                <mat-label> Reperatur Notwendig </mat-label>
+                <mat-checkbox formControlName="reperaturNotwendig"></mat-checkbox>  
+            </div>
+            <div>  
+                <mat-label> Von Kundem Verursacht </mat-label>
+                <mat-checkbox formControlName="vonMieterVerursacht"></mat-checkbox>                
+            </div>
+            
+
+            <button  color="primary" mat-raised-button style="width: 200px">
+                {{ 'Save' }}
+            </button>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+

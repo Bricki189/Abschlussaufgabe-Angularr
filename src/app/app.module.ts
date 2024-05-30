@@ -14,6 +14,19 @@ import {MatButtonModule} from '@angular/material/button';
 import { FahrzeugComponent } from './pages/fahrzeug/fahrzeug.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import {MatTableModule} from '@angular/material/table';
+import { FahrzeugDetailComponent } from './pages/fahrzeug-detail/fahrzeug-detail.component';
+import {MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialog, MatDialogActions, MatDialogModule } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { MatFormField, MatFormFieldModule, MatHint, MatLabel } from '@angular/material/form-field';
+import { MatOption, MatSelect } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import { SchadenListComponent } from './components/schaden-list/schaden-list.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { SchadenDetailComponent } from './pages/schaden-detail/schaden-detail.component';
+import { ReservationComponent } from './pages/reservation/reservation.component';
+import { KundeComponent } from './pages/kunde/kunde.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/ILV',
@@ -38,7 +51,14 @@ export function storageFactory(): OAuthStorage {
   declarations: [
     AppComponent,
     FahrzeugComponent,
-    NavBarComponent
+    NavBarComponent,
+    FahrzeugDetailComponent,
+    ConfirmDialogComponent,
+    SchadenListComponent,
+    SchadenDetailComponent,
+    ReservationComponent,
+    KundeComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -51,7 +71,20 @@ export function storageFactory(): OAuthStorage {
     }),
     HttpClientModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatHint,
+    MatFormField,
+    MatLabel,
+    MatSelect,
+    MatOption,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCheckboxModule
+
   ],
   providers: [
     provideAnimationsAsync(),

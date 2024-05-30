@@ -1,0 +1,33 @@
+<div style="margin: 50px;">
+      <table mat-table [dataSource]="data" class="mat-elevation-z8">
+        <ng-container matColumnDef="buttons">
+          <th *matHeaderCellDef class="tabelButtons" mat-header-cell></th>
+          <td *matCellDef="let element" mat-cell style="text-align: end">
+            <button  (click)="edit(element)" color="primary" mat-button>
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="delete(element)"  color="warn" mat-button>
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="vonDatum">
+            <th mat-header-cell *matHeaderCellDef> Von Datum </th>
+            <td mat-cell *matCellDef="let element"> {{element.vonDatum | date}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="bisDatum">
+            <th mat-header-cell *matHeaderCellDef> Bis Datum </th>
+            <td mat-cell *matCellDef="let element"> {{element.bisDatum | date}} </td>
+          </ng-container>  
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>   
+  </div>

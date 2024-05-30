@@ -1,0 +1,39 @@
+<div>
+    <div class="app-form">
+      <form [formGroup]="objForm!" (ngSubmit)="save(objForm.value)">
+        <div class="form-elements">
+            <div> <mat-form-field>
+                <mat-label> Marke </mat-label>
+                <input #inputLicence appAutofocus formControlName="marke" matInput maxlength="20" required>
+            </mat-form-field>
+            </div>
+           
+           <div>
+            <mat-form-field>
+                <mat-label> Model </mat-label>
+                <input #inputLicence appAutofocus formControlName="model" matInput maxlength="20" required>
+            </mat-form-field>
+           </div>
+           
+           <div>
+            <mat-form-field>
+                <mat-label> Auto Nr </mat-label>
+                <input #inputLicence appAutofocus formControlName="autoNr" matInput maxlength="20" required>
+            </mat-form-field>
+           </div>
+            
+           <div>
+            <mat-form-field>
+                <mat-label> Rahmen Nr </mat-label>
+                <input #inputLicence appAutofocus formControlName="rahmenNr" matInput maxlength="20" required>
+            </mat-form-field>
+            </div>
+            <button  color="primary" mat-raised-button style="width: 200px">
+                {{ 'Save' }}
+            </button>
+        </div>
+        
+      </form>
+    </div>
+    <app-schaden-list></app-schaden-list>
+  </div>

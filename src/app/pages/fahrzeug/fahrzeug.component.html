@@ -1,6 +1,22 @@
 <div style="margin: 50px;">
-    <table mat-table [dataSource]="data" class="mat-elevation-z8">
 
+  <button (click)="add()" color="primary" mat-button >
+    <mat-icon>add</mat-icon>
+    Neu
+  </button>
+
+    <table mat-table [dataSource]="data" class="mat-elevation-z8">
+      <ng-container matColumnDef="buttons">
+        <th *matHeaderCellDef class="tabelButtons" mat-header-cell></th>
+        <td *matCellDef="let element" mat-cell style="text-align: end">
+          <button  (click)="edit(element)" color="primary" mat-button>
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button (click)="delete(element)"  color="warn" mat-button>
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
 
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> ID </th>
