@@ -1,0 +1,30 @@
+<div>
+    <div class="app-form" style="margin-left: 50px; margin-top: 100px;">
+      <form [formGroup]="objForm!" (ngSubmit)="save(objForm.value)">
+        <div class="form-elements">
+            <mat-form-field>
+                <mat-label>Von Datum</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker formControlName="vonDatum" ></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Bis Datum</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker formControlName="bisDatum"></mat-datepicker>
+            </mat-form-field>
+            
+           
+            
+
+            <button  color="primary" mat-raised-button style="width: 200px">
+                {{ 'Save' }}
+            </button>
+        </div>
+        
+      </form>
+    </div>
+  </div>

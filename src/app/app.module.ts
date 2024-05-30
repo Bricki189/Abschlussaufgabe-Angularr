@@ -27,6 +27,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { SchadenDetailComponent } from './pages/schaden-detail/schaden-detail.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
 import { KundeComponent } from './pages/kunde/kunde.component';
+import { ReservationDetailComponent } from './pages/reservation-detail/reservation-detail.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/ILV',
@@ -58,6 +61,7 @@ export function storageFactory(): OAuthStorage {
     SchadenDetailComponent,
     ReservationComponent,
     KundeComponent,
+    ReservationDetailComponent,
 
   ],
   imports: [
@@ -83,7 +87,10 @@ export function storageFactory(): OAuthStorage {
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatMomentDateModule
+
 
   ],
   providers: [

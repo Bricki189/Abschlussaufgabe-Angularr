@@ -4,6 +4,7 @@ import { FahrzeugComponent } from './pages/fahrzeug/fahrzeug.component';
 import { FahrzeugDetailComponent } from './pages/fahrzeug-detail/fahrzeug-detail.component';
 import { SchadenDetailComponent } from './pages/schaden-detail/schaden-detail.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
+import { ReservationDetailComponent } from './pages/reservation-detail/reservation-detail.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'schadendetail/:id', component: SchadenDetailComponent },
   { path: 'schadendetail-new/:fahrzeugId', component: SchadenDetailComponent },
   { path: 'reservationen', component: ReservationComponent },
+  { path: 'reservationdetail/:id', component: ReservationDetailComponent },
 
 
 ];
