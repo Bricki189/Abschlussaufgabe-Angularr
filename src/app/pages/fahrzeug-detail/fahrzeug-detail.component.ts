@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FahrzeugService } from '../../service/fahrzeug.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './fahrzeug-detail.component.html',
   styleUrl: './fahrzeug-detail.component.scss'
 })
-export class FahrzeugDetailComponent {
+export class FahrzeugDetailComponent implements OnInit {
 
   fahrzeug = new Fahrzeug();
   public objForm = new UntypedFormGroup({

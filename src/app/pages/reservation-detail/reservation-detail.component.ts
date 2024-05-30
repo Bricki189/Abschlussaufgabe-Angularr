@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReservationService } from '../../service/reservation.service';
 import { Reservation } from '../../data/reservation';
-import {provideNativeDateAdapter} from '@angular/material/core';
 
 
 @Component({
@@ -12,7 +11,7 @@ import {provideNativeDateAdapter} from '@angular/material/core';
   templateUrl: './reservation-detail.component.html',
   styleUrl: './reservation-detail.component.scss'
 })
-export class ReservationDetailComponent {
+export class ReservationDetailComponent implements OnInit{
 
   reservation = new Reservation();
   public objForm = new UntypedFormGroup({

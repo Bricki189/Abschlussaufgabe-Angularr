@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Schaden } from '../../data/schaden';
 import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { SchadenService } from '../../service/schaden.service';
@@ -11,7 +11,7 @@ import { Fahrzeug } from '../../data/fahrzeug';
   templateUrl: './schaden-detail.component.html',
   styleUrl: './schaden-detail.component.scss'
 })
-export class SchadenDetailComponent {
+export class SchadenDetailComponent implements OnInit{
 
   schaden = new Schaden();
   public objForm = new UntypedFormGroup({

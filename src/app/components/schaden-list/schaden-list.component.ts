@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Schaden } from '../../data/schaden';
-import { MatTableDataSource } from '@angular/material/table';
 import { SchadenService } from '../../service/schaden.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -28,8 +27,7 @@ export class SchadenListComponent implements OnInit{
     if (this.route.snapshot.paramMap.get('id') !== null) {
       this.fahrzeugId = Number.parseInt(this.route.snapshot.paramMap.get('id') as string);
       this.reloadData();
-    } else {
-    }
+    } 
   }
 
   reloadData(){

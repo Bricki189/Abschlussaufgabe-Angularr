@@ -1,4 +1,13 @@
-<div class="sidebar-nav" style="width: 15%;">
-    <button [routerLink]="['fahrzeug']" mat-raised-button style="background-color: blue; color: aliceblue; margin-top: 20px; margin-left: 20px; margin-right: 10px; width: 200px;">Fahrzeuge  </button>
-    <button [routerLink]="['reservationen']" mat-raised-button style="background-color: blue; color: aliceblue; margin-top: 20px; margin-left: 20px; margin-right: 10px; width: 200px;">Reservationen  </button>
+<div class="sidebar-nav">
+    <div class="title">
+       <H2><mat-icon class="header-icon">car_rental</mat-icon> Autovermietung</H2>
+    </div>
+    <div class="centered-buttons">
+        <button [routerLink]="['fahrzeug']" mat-raised-button class="sidebar-button">Fahrzeuge</button>
+        <button [routerLink]="['reservationen']" mat-raised-button class="sidebar-button">Reservationen</button>
+    </div>
+    <div class="right-aligned-buttons">
+        <button (click)="logout()"  mat-raised-button class="logoutButton" color="warn"><mat-icon fontIcon="logout">logout</mat-icon>Logout</button>
+        <button [routerLink]="['profile']" mat-raised-button class="profileButton"><mat-icon fontIcon="person">person</mat-icon>Profile</button>
+    </div>
 </div>

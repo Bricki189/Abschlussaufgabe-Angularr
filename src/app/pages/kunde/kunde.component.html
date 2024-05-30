@@ -1,1 +1,31 @@
-<p>kunde works!</p>
+<div>
+    <div class="app-form">
+      <form [formGroup]="objForm!" (ngSubmit)="save(objForm.value)">
+        <div class="form-elements">
+            <div> <mat-form-field>
+                <mat-label> name </mat-label>
+                <input #inputLicence appAutofocus formControlName="name" matInput maxlength="50" required>
+            </mat-form-field>
+            </div>
+           
+           <div>
+            <mat-form-field>
+                <mat-label> Nachname </mat-label>
+                <input #inputLicence appAutofocus formControlName="nachName" matInput maxlength="50" required>
+            </mat-form-field>
+           </div>
+           
+           <div>
+            <mat-form-field>
+                <mat-label> Versicherungs Nummer </mat-label>
+                <input #inputLicence appAutofocus formControlName="versicherungsNr" matInput maxlength="13" minlength="13" required>
+            </mat-form-field>
+           </div>
+            <button [disabled]="!objForm.valid" color="primary" mat-raised-button style="width: 200px">
+                {{ 'Save' }}
+            </button>
+        </div>
+        
+      </form>
+    </div>
+  </div>

@@ -16,7 +16,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import {MatTableModule} from '@angular/material/table';
 import { FahrzeugDetailComponent } from './pages/fahrzeug-detail/fahrzeug-detail.component';
 import {MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatDialog, MatDialogActions, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { MatFormField, MatFormFieldModule, MatHint, MatLabel } from '@angular/material/form-field';
 import { MatOption, MatSelect } from '@angular/material/select';
@@ -30,13 +30,17 @@ import { KundeComponent } from './pages/kunde/kunde.component';
 import { ReservationDetailComponent } from './pages/reservation-detail/reservation-detail.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import {IsInRoleDirective} from './dir/is.in.role.dir';
+import {IsInRolesDirective} from './dir/is.in.roles.dir';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/ILV',
   requireHttps: false,
-  redirectUri: 'http://localhost:4200/fahrzeug',
+  redirectUri: 'http://localhost:4200',
   postLogoutRedirectUri: 'http://localhost:4200',
-  clientId: 'demoapp',
+  clientId: 'AbsschlussaufgabeClient',
   scope: 'openid profile roles offline_access',
   responseType: 'code',
   showDebugInformation: true,
@@ -62,6 +66,9 @@ export function storageFactory(): OAuthStorage {
     ReservationComponent,
     KundeComponent,
     ReservationDetailComponent,
+    IsInRoleDirective,
+    IsInRolesDirective,
+    HomePageComponent,
 
   ],
   imports: [

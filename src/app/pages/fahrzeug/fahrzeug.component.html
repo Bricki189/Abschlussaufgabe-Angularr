@@ -1,6 +1,6 @@
 <div style="margin: 50px;">
 
-  <button (click)="add()" color="primary" mat-button >
+  <button (click)="add()" *appIsInRole="'admin'" color="primary" mat-button >
     <mat-icon>add</mat-icon>
     Neu
   </button>
@@ -12,7 +12,7 @@
           <button  (click)="edit(element)" color="primary" mat-button>
             <mat-icon>edit</mat-icon>
           </button>
-          <button (click)="delete(element)"  color="warn" mat-button>
+          <button (click)="delete(element)" *appIsInRole="'admin'" color="warn" mat-button>
             <mat-icon>delete</mat-icon>
           </button>
         </td>
