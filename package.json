@@ -24,6 +24,7 @@
     "@angular/router": "^17.3.0",
     "@auth0/angular-jwt": "^5.2.0",
     "angular-oauth2-oidc": "^17.0.2",
+    "jasmine-auto-spies": "^8.0.1",
     "material-icons": "^1.13.12",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

@@ -1,6 +1,6 @@
 <div>
     <div class="app-form">
-      <form [formGroup]="objForm!" (ngSubmit)="save(objForm.value)">
+      <form [formGroup]="objForm!"  *appIsInRoles="['admin', 'mitarbeiter']" (ngSubmit)="save(objForm.value)">
         <div class="form-elements">
             <div> <mat-form-field>
                 <mat-label> Marke </mat-label>
@@ -35,5 +35,8 @@
         
       </form>
     </div>
-    <app-schaden-list></app-schaden-list>
+    <ng-container *ngIf="!isNewState" >
+        <app-schaden-list></app-schaden-list>
+        <app-reservation-trigger></app-reservation-trigger>
+    </ng-container>
   </div>

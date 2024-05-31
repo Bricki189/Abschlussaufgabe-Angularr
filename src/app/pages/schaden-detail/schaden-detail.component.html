@@ -22,17 +22,17 @@
             </mat-form-field>
            </div>
             
-           <div>
+           <div  *appIsInRoles="['admin', 'mitarbeiter']">
                 <mat-label> Reperatur Notwendig </mat-label>
                 <mat-checkbox formControlName="reperaturNotwendig"></mat-checkbox>  
             </div>
-            <div>  
+            <div  *appIsInRoles="['admin', 'mitarbeiter']">  
                 <mat-label> Von Kundem Verursacht </mat-label>
                 <mat-checkbox formControlName="vonMieterVerursacht"></mat-checkbox>                
             </div>
             
 
-            <button [disabled]="!objForm.valid" color="primary" mat-raised-button style="width: 200px">
+            <button [disabled]="!objForm.valid"  *appIsInRoles="['admin', 'mitarbeiter']" color="primary" mat-raised-button style="width: 200px">
                 {{ 'Save' }}
             </button>
         </div>

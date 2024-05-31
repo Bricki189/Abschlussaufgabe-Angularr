@@ -18,7 +18,7 @@ export class ReservationService {
   }
 
   public save(reservation: Reservation): Observable<Reservation> {
-    return this.httpClient.post<Reservation>(environment.backendBaseUrl + 'InsertSchaden', reservation);
+    return this.httpClient.post<Reservation>(environment.backendBaseUrl + 'InsertReservation', reservation);
   }
 
   public delete(id: number): Observable<HttpResponse<string>> {
@@ -26,10 +26,10 @@ export class ReservationService {
   }
 
   public getOne(id: number): Observable<Reservation> {
-    return this.httpClient.get<Reservation>(environment.backendBaseUrl + 'FindSchadenById' + `/${id}`);
+    return this.httpClient.get<Reservation>(environment.backendBaseUrl + 'ReservationById' + `/${id}`);
   }
 
   public update(reservation: Reservation): Observable<Reservation> {
-    return this.httpClient.put<Reservation>(environment.backendBaseUrl + 'SchadenUpdaten', reservation);
+    return this.httpClient.put<Reservation>(environment.backendBaseUrl + 'ReservationUpdaten', reservation);
   }
 }

@@ -17,8 +17,6 @@ export class ReservationDetailComponent implements OnInit{
   public objForm = new UntypedFormGroup({
     vonDatum: new UntypedFormControl(Date),
     bisDatum: new UntypedFormControl(Date),
-    
-
   });
 
   constructor(private router: Router, private route: ActivatedRoute,
@@ -50,20 +48,10 @@ export class ReservationDetailComponent implements OnInit{
           this.snackBar.open('', '', {duration: 5000, politeness: 'assertive'});
         }
       });
-    } else {
-      this.reservationService.save(this.reservation).subscribe({
-        next: () => {
-          this.snackBar.open('', '', {duration: 5000});
-          this.back();
-        },
-        error: () => {
-          this.snackBar.open('', '', {duration: 5000, politeness: 'assertive'});
-        }
-      });
-    }
+    } 
   }
 
   async back() {
-    await this.router.navigate(['fahrzeug']);
+    await this.router.navigate(['reservationen']);
   }
 }

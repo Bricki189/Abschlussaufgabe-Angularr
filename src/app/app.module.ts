@@ -33,6 +33,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import {IsInRoleDirective} from './dir/is.in.role.dir';
 import {IsInRolesDirective} from './dir/is.in.roles.dir';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ReservationTriggerComponent } from './components/reservation-trigger/reservation-trigger.component';
 
 
 export const authConfig: AuthConfig = {
@@ -69,6 +70,7 @@ export function storageFactory(): OAuthStorage {
     IsInRoleDirective,
     IsInRolesDirective,
     HomePageComponent,
+    ReservationTriggerComponent,
 
   ],
   imports: [

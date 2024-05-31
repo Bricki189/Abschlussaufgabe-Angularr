@@ -25,8 +25,8 @@ export class IsInRolesDirective implements OnInit, OnDestroy {
         this.viewContainerRef.clear();
       }
       let found = true;
-      this.appIsInRoles?.forEach(r => {
-        if (!roles.includes(r)) {
+        roles.forEach(r => {
+        if (!this.appIsInRoles?.includes(r)) {
           found = false;
         }
       });

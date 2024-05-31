@@ -12,6 +12,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class FahrzeugDetailComponent implements OnInit {
 
+
+  public isNewState = false;
   fahrzeug = new Fahrzeug();
   public objForm = new UntypedFormGroup({
     marke: new UntypedFormControl(''),
@@ -33,6 +35,7 @@ export class FahrzeugDetailComponent implements OnInit {
       });
     } else {
       this.objForm = this.formBuilder.group(this.fahrzeug);
+      this.isNewState = true;
     }
   }
 

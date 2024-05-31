@@ -24,15 +24,10 @@ export class KundeComponent implements OnInit{
   }
   
   ngOnInit(): void {
-    if (this.route.snapshot.paramMap.get('id') !== null) {
-      const id = Number.parseInt(this.route.snapshot.paramMap.get('id') as string);
-      this.kundeService.getOne(id).subscribe(obj => {
+      this.kundeService.getOneByUser().subscribe(obj => {
         this.kunde = obj;
         this.objForm = this.formBuilder.group(obj);
       });
-    } else {
-      this.objForm = this.formBuilder.group(this.kunde);
-    }
   }
 
 
@@ -49,17 +44,7 @@ export class KundeComponent implements OnInit{
           this.snackBar.open('', '', {duration: 5000, politeness: 'assertive'});
         }
       });
-    } else {
-      this.kundeService.save(this.kunde).subscribe({
-        next: () => {
-          this.snackBar.open('', '', {duration: 5000});
-          this.back();
-        },
-        error: () => {
-          this.snackBar.open('', '', {duration: 5000, politeness: 'assertive'});
-        }
-      });
-    }
+    } 
   }
 
   async back() {
